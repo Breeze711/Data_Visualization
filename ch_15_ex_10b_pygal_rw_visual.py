@@ -10,15 +10,16 @@ while True:
     rw.fill_walk()
     
     xy_chart = pygal.XY(height=10, width=6, stroke=True,
-                        style=LightSolarizedStyle)                  
+                        style=LightSolarizedStyle, show_legend=True,
+                       human_readable=True, fill=True, show_dots=True,
+                       dot_size=4)                  
     xy_chart.title = 'Random Walk'
-    xy_chart.add('rw.x_values', 'rw.y_values', show_dots=True, dot_size=4,
-             stroke_style={'width':5})
-    xy_chart.render(show_legend=True, human_readable=True, fill=True)    
+    xy_chart.add('rw.x_values', 'rw.y_values')
+    xy_chart.render()    
                  
     keep_running = input("Make another walk? (y/n):")
     if keep_running == 'n':
         break
 
-xy_chart.render_to_file('pygal_rw_visual.svg')
+
 
