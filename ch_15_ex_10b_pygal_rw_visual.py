@@ -1,19 +1,24 @@
 import pygal
 from pygal.style import LightSolarizedStyle
-from random import choice
 
+HEIGHT = 600
+WIDTH = 700
 
-xy_chart = pygal.XY(height=10, width=6, stroke=True,
-                    style=LightSolarizedStyle, show_legend=True,
-                    human_readable=True, fill=True, show_dots=True,
+points = [((-1, 0), (1, 5), (4, 3), (2, 6), (7, 2)), ((3, 6), (5, 4), (7, 10), (9, 8),
+                                                      (8, 6)),
+          ((7, 11), (9, 6), (11, 13), (13, 6))]
+
+types = ['A numbers', 'B numbers', 'C numbers']
+
+xy_chart = pygal.XY(height=HEIGHT, width=WIDTH, style=LightSolarizedStyle,
+                    stroke=True, show_legend=True,
+                    human_readable=True, fill=False, show_dots=True,
                     dot_size=4)                  
-xy_chart.title = 'Random Walk'
-xy_chart.x_labels = map(str, range(-2, 6))
-xy_chart.y_labels = map(str, range(-2, 6))
-xy_chart.add('x = choice(x)', [choice((-1, 1)) for x in range(0, 5)])
-xy_chart.add('y = choice(y)', [choice((-1, 1)) for y in range(0, 5)])
-                  
-xy_chart.render_to_file('tues_test.svg')   
+xy_chart.title = 'Points and Types'
+xy_chart.x_labels = map(lambda x: str(x) if not x % 3 else '', range(20))
+for type, point in zip(types, points):
+    xy_chart.add(type, point)
+xy_chart.render_to_file('xy_chart.svg')   
 
 
 
