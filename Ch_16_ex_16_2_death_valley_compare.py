@@ -31,11 +31,11 @@ plt.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 # Format plot.
 title = "Daily high and low temperatures - 2014\nDeath Valley, CA"
 plt.title(title, fontsize=18)
-plt.range=(10, 120)
 plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
 plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(10, 120)
 
 # Get dates, high, and low temperatures from file for Death Valley and Sitka.
 filename2 = 'sitka_weather_2014.csv'
@@ -58,7 +58,6 @@ with open(filename2) as f2:
     
 # Plot data.
 fig = plt.figure(dpi=128, figsize=(10, 6))
-plt.plot(range=(10, 120))
 plt.plot(dates, highs, c='green', alpha=0.5)
 plt.plot(dates, lows, c='yellow', alpha=0.5)
 plt.fill_between(dates, highs, lows, facecolor='green', alpha=0.1)
@@ -66,11 +65,11 @@ plt.fill_between(dates, highs, lows, facecolor='green', alpha=0.1)
 # Format plot.
 title = "Daily high and low temperatures - 2014\nSitka, AK"
 plt.title(title, fontsize=18)
-plt.range=(10, 120)
 plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
 plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(10, 120)
 
 plt.show()
                       
