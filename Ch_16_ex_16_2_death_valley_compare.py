@@ -36,6 +36,7 @@ plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
 plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(10, 120)
 
 # Get dates, high, and low temperatures from file for Death Valley and Sitka.
 filename2 = 'sitka_weather_2014.csv'
@@ -71,6 +72,7 @@ plt.xlabel('', fontsize=16)
 fig.autofmt_xdate()
 plt.ylabel("Temperature (F)", fontsize=16)
 plt.tick_params(axis='both', which='major', labelsize=16)
+plt.ylim(10, 120)
 
 plt.show()
                       
