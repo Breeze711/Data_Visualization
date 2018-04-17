@@ -17,7 +17,7 @@ HEIGHT = 600
 WIDTH = 600
 xy_chart = pygal.XY(height=HEIGHT, width=WIDTH)
 
-Voila! I got a chart. I have to thank one of my mentors, Caleb Hyde for guiding me thru this error and resolution. Thanks Caleb!
+Voila! I got a chart. I have to thank one of my mentors, Caleb for guiding me thru this error and resolution. Thanks Caleb!
 
 In chapter 16, I'm downloading data sets and creating charts and graphs from the data. The first part of chapter 16 involves working with csv files, graphing out high and low temperatures for different citiess. In ch_16_ex_16-1, I downloaded weather info for San Francisco, CA for 2014 in a csv file and converted some of the data into a chart(graph) that shows high and low temperatures. 
 
